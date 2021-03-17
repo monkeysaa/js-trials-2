@@ -24,11 +24,7 @@ function everyOtherItem(items) {
 
 
 // 3. smallestNItems
-// First sort items, then slice items[:n], items.reverse
-// function smallestNItems(items, n) {
-//   let sorted_items = items.sort((a, b) => a-b)
-//   return sorted_items.slice(0, n).reverse();
-// }
+// method 1 uses compare as a separate function
 function compare(a, b) {
   return a - b;
 }
@@ -38,10 +34,8 @@ function smallestNItems(items, n) {
   return sorted_items.slice(0, n).reverse();
 }
 
-
-// function compare(a, b) {
-//   return a - b;
-// }
-
-// let sorted_items = items.sort((a, b) => a-b)
-// sorted_items.slice(0, n);
+// method 2 uses arrow function
+function smallestNItems2(items, n) {
+  let sorted_items = items.sort((a, b) => a - b); 
+  return sorted_items.slice(0, n).reverse();
+}
